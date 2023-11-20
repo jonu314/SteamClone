@@ -1,0 +1,143 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  background-color: #000;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+.stroke-dotted {
+  opacity: 0;
+  stroke-dasharray: 4, 5;
+  stroke-width: 1px;
+  transform-origin: 50% 50%;
+  animation: spin 8s infinite linear;
+  transition: opacity 1s ease, stroke-width 1s ease;
+}
+.stroke-solid {
+  stroke-dashoffset: 0;
+  stroke-dasharray: 300;
+  stroke-width: 2px;
+  transition: stroke-dashoffset 1s ease, opacity 1s ease;
+}
+.icon {
+  transform-origin: 50% 50%;
+  transition: transform 200ms ease-out;
+}
+#play:hover .stroke-dotted {
+  stroke-width: 4px;
+  opacity: 1;
+}
+#play:hover .stroke-solid {
+  opacity: 0;
+  stroke-dashoffset: 300;
+}
+#play:hover .icon {
+  transform: scale(1.05);
+}
+
+.md\:text-720px {
+  font-size: 720px;
+}
+
+:root {
+  --bg:  #242526;
+  --bg-accent: #484a4d;
+  --text-color: #dadce1;
+  --border: 1px solid #474a4d;
+  --border-radius: 1px;
+  --speed: 500ms; 
+}
+
+.auth__dropdown {
+  /* transform: translateX(-45%); */
+  transition: height var(--speed) ease;
+}
+
+
+
+
+
+
+.menu-item .icon-button:hover {
+  filter: none;
+}
+
+
+
+/* CSSTransition classes  */
+.menu-primary-enter {
+  position: absolute;
+  transform: translateX(-110%);
+}
+.menu-primary-enter-active {
+  transform: translateX(0%);
+  transition: all var(--speed) ease;
+}
+.menu-primary-exit {
+  position: absolute;
+}
+.menu-primary-exit-active {
+  transform: translateX(-110%);
+  transition: all var(--speed) ease;
+}
+
+
+.menu-secondary-enter {
+  transform: translateX(110%);
+}
+.menu-secondary-enter-active {
+  transform: translateX(0%);
+  transition: all var(--speed) ease;
+}
+.menu-secondary-exit {
+
+}
+.menu-secondary-exit-active {
+  transform: translateX(110%);
+  transition: all var(--speed) ease;
+}
+
+
+
+.menu-tertiary-enter {
+  transform: translateX(110%);
+}
+.menu-tertiary-enter-active {
+  transform: translateX(0%);
+  transition: all var(--speed) ease;
+}
+.menu-tertiary-exit {
+
+}
+.menu-tertiary-exit-active {
+  transform: translateX(110%);
+  transition: all var(--speed) ease;
+}
+
+.text-transparent {
+  color: transparent;
+}
+
+:root {
+  --scrollbarBG: #141414;
+  --thumbBG: #ffb700;
+}
+body::-webkit-scrollbar {
+  width: 5px;
+}
+body {
+  scrollbar-width: thin;
+  scrollbar-color: var(--thumbBG) var(--scrollbarBG);
+}
+body::-webkit-scrollbar-track {
+  background: var(--scrollbarBG);
+}
+body::-webkit-scrollbar-thumb {
+  background-color: var(--thumbBG);
+}
